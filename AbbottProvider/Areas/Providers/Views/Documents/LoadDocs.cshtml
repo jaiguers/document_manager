@@ -38,31 +38,19 @@
                             <form id="docForm" role="form" method="post" enctype="multipart/form-data">
                                 @Html.ValidationSummary(false)
                                 <div class="form-group">
-                                    @Html.LabelFor(m => m.UploadedFileCC)
+                                    @Html.LabelFor(m => m.UploadedFile)
 
                                     <div class="custom-file">
-                                        @Html.TextBoxFor(m => m.UploadedFileCC, new { @class = "custom-file-input", @type = "file", @data_min_files = "0", @data_max_files = "1", @data_file_type = "pdf", @data_max_size = "314572800", @accept = ".pdf", onchange = "fileExtValidacion(event)" })
-                                        @Html.ValidationMessageFor(m => m.UploadedFileCC)
+                                        @Html.TextBoxFor(m => m.UploadedFile, new { @class = "custom-file-input", @type = "file", @data_min_files = "0", @data_max_files = "1", @data_file_type = "pdf", @data_max_size = "314572800", @accept = ".pdf", onchange = "fileExtValidacion(event)" })
+                                        @Html.ValidationMessageFor(m => m.UploadedFile)
                                         <label id="idLabelCC" class="custom-file-label PDFdocumentName" for="customFile">Buscar archivo</label>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    @Html.LabelFor(m => m.UploadedFileHv)
 
-                                    <div class="custom-file">
-                                        @Html.TextBoxFor(m => m.UploadedFileHv, new { @class = "custom-file-input", @type = "file", @data_min_files = "0", @data_max_files = "1", @data_file_type = "pdf", @data_max_size = "314572800", @accept = ".pdf", onchange = "fileExtValidacion(event)" })
-                                        @Html.ValidationMessageFor(m => m.UploadedFileHv)
-                                        <label id="idLabelHV" class="custom-file-label PDFdocumentName" for="customFile">Buscar archivo</label>
-                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    @Html.LabelFor(m => m.UploadedFileARL)
 
-                                    <div class="custom-file">
-                                        @Html.TextBoxFor(m => m.UploadedFileARL, new { @class = "custom-file-input", @type = "file", @data_min_files = "0", @data_max_files = "1", @data_file_type = "pdf", @data_max_size = "314572800", @accept = ".pdf", onchange = "fileExtValidacion(event)" })
-                                        @Html.ValidationMessageFor(m => m.UploadedFileARL)
-                                        <label id="idLabelARl" class="custom-file-label PDFdocumentName" for="customFile">Buscar archivo</label>
-                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary">Cargar</button>
@@ -108,7 +96,7 @@
             var $fileName = filePath.split("\\").pop();
             $inputField1.parent().find(".PDFdocumentName").html($fileName);
             //cargarArchivos(event, 'tabla-anexos');
-           // fileUpload(event, 'tabla-anexos');
+            // fileUpload(event, 'tabla-anexos');
             // $idSeccionSig = $inputField1.closest('[id*="tab-"]').next().attr('id');
             // habilitarSection($idSeccionSig);
         }

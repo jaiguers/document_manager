@@ -12,16 +12,8 @@ namespace DocumentManager.Areas.Providers.Models
     {
 
         [Required(ErrorMessage = "Campo requerido.")]
-        [Display(Name = "Copia de cédula *")]
-        public IFormFile UploadedFileCC { get; set; }
-
-        [Required(ErrorMessage = "Campo requerido.")]
-        [Display(Name = "Hoja de vida *")]
-        public IFormFile UploadedFileHv { get; set; }
-
-        [Required(ErrorMessage = "Campo requerido.")]
-        [Display(Name = "ARL *")]
-        public IFormFile UploadedFileARL { get; set; }
+        [Display(Name = "Documento *")]
+        public IFormFile UploadedFile { get; set; }
         public List<DocumentsAM> ListDocs { get; set; }
     }
 }
