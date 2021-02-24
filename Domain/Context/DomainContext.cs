@@ -14,6 +14,7 @@ namespace Domain.Context
         public DbSet<DocumentType> DocumentType { get; set; }
         public DbSet<RolMenu> RolMenu { get; set; }
         public DbSet<Menu> Menu { get; set; }
+        public DbSet<ConsecutiveConfig> ConsecutiveConfig { get; set; }
 
 
         public DomainContext(DbContextOptions<DomainContext> options) : base(options)

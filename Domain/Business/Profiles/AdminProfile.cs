@@ -1,9 +1,6 @@
-﻿using System;
+﻿using Abbott.CrossCutting.ApplicationModel;
 using AutoMapper;
-using System.Collections.Generic;
-using System.Text;
 using Domain.Models;
-using Abbott.CrossCutting.ApplicationModel;
 
 namespace Domain.Business.Profiles
 {
@@ -20,7 +17,7 @@ namespace Domain.Business.Profiles
             CreateMap<Department, DepartmentAM>().ReverseMap();
             CreateMap<DocumentType, DocumentTypeAM>().ReverseMap();
             CreateMap<IdentificationType, IdentificationTypeAM>().ReverseMap();
-
+            CreateMap<ConsecutiveConfig, ConsecutiveConfigAM>().ReverseMap();
         }
     }
 }
