@@ -1,0 +1,116 @@
+﻿@model AbbottProvider.Areas.Providers.Models.DocVM
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "LoadDocs";
+}
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Documentos</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                    <li class="breadcrumb-item active">Carga de documentos</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <!-- Main row -->
+        <main role="main">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- general form elements disabled -->
+                    <div class="card card-info">
+                        <div class="card-header">
+                            <h3 class="card-title">Documentos</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <form id="docForm" role="form" method="post" enctype="multipart/form-data">
+                                @Html.ValidationSummary(false)
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.UploadedFileCC)
+
+                                    <div class="custom-file">
+                                        @Html.TextBoxFor(m => m.UploadedFileCC, new { @class = "custom-file-input", @type = "file", @data_min_files = "0", @data_max_files = "1", @data_file_type = "pdf", @data_max_size = "314572800", @accept = ".pdf", onchange = "fileExtValidacion(event)" })
+                                        @Html.ValidationMessageFor(m => m.UploadedFileCC)
+                                        <label id="idLabelCC" class="custom-file-label PDFdocumentName" for="customFile">Buscar archivo</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.UploadedFileHv)
+
+                                    <div class="custom-file">
+                                        @Html.TextBoxFor(m => m.UploadedFileHv, new { @class = "custom-file-input", @type = "file", @data_min_files = "0", @data_max_files = "1", @data_file_type = "pdf", @data_max_size = "314572800", @accept = ".pdf", onchange = "fileExtValidacion(event)" })
+                                        @Html.ValidationMessageFor(m => m.UploadedFileHv)
+                                        <label id="idLabelHV" class="custom-file-label PDFdocumentName" for="customFile">Buscar archivo</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.UploadedFileARL)
+
+                                    <div class="custom-file">
+                                        @Html.TextBoxFor(m => m.UploadedFileARL, new { @class = "custom-file-input", @type = "file", @data_min_files = "0", @data_max_files = "1", @data_file_type = "pdf", @data_max_size = "314572800", @accept = ".pdf", onchange = "fileExtValidacion(event)" })
+                                        @Html.ValidationMessageFor(m => m.UploadedFileARL)
+                                        <label id="idLabelARl" class="custom-file-label PDFdocumentName" for="customFile">Buscar archivo</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Cargar</button>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+
+                </div>
+                <!--/.col -->
+
+            </div>
+
+        </main>
+
+        <!-- /.row (main row) -->
+    </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+@section Scripts{
+    <script>
+        function fileExtValidacion(event) {
+            var inputFile = event.target;
+            var fileInput = $("#" + inputFile.id)[0];
+            var filePath = fileInput.value;
+            var allowedExtensions = /(.pdf)$/i;
+            var file_max_size = fileInput.size;
+            var file_actual_size = fileInput.files[0].size / 1000000;
+            if (file_actual_size > file_max_size) {
+                fileInput.value = '';
+                // ModalGenerico("error", "Error en archivo", "Entendido", 'El tama&ntilde;o del archivo excede el l&iacute;mite de ' + file_max_size + ' Mb');
+                return false;
+            }
+            if (!allowedExtensions.exec(filePath)) {
+                // ModalGenerico("error", "Archivo incorrecto", "Entendido", "Solamente se permite cargar archivos en formato PDF.");
+                fileInput.value = '';
+                return false;
+            }
+            var $inputField1 = $(inputFile);
+
+            var $fileName = filePath.split("\\").pop();
+            $inputField1.parent().find(".PDFdocumentName").html($fileName);
+            //cargarArchivos(event, 'tabla-anexos');
+           // fileUpload(event, 'tabla-anexos');
+            // $idSeccionSig = $inputField1.closest('[id*="tab-"]').next().attr('id');
+            // habilitarSection($idSeccionSig);
+        }
+    </script>
+}

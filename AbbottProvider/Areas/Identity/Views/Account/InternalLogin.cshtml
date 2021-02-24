@@ -1,0 +1,64 @@
+﻿@model AbbottProvider.Areas.Identity.Models.ViewModels.LoginVM
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_layout.cshtml";
+}
+
+<div class="login-box">
+    <div class="login-logo">
+        <a href="/"><b>Gestor</b>documental</a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="card">
+
+        <div class="card-body login-card-body">
+            <p class="login-box-msg">Iniciar sesión</p>
+
+            <form id="loginForm" asp-area="Identity" asp-controller="Account" asp-action="InternalLogin" method="POST" enctype="multipart/form-data">
+                @Html.ValidationSummary(false)
+                <div class="input-group mb-3">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email" })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "" })
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-envelope"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "" })
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-8">
+                        <div class="icheck-primary">
+                            <input type="checkbox" id="remember">
+                            <label for="remember">
+                                Recordarme
+                            </label>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </form>
+
+            <p class="mb-1">
+                <a href="/Identity/Account/ForgotPassword">Recordar password</a>
+            </p>
+            <p class="mb-0">
+                <a href="/Register/Registers/Internal" class="text-center">Registrarse</a>
+            </p>
+        </div>
+        <!-- /.login-card-body -->
+    </div>
+</div>

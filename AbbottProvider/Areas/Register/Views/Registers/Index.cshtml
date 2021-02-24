@@ -1,0 +1,125 @@
+﻿@model AbbottProvider.Areas.Register.Models.RegisterVM
+@{
+    ViewData["Title"] = "Register";
+    Layout = "_layout.cshtml";
+}
+
+<div class="">
+    <div class="login-logo">
+        <a href="/Identity/Account/Login"><b>Gestor</b>documental</a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="card">
+        <div class="row col-lg-12 col-12">
+            <div class="card-body login-card-body">
+                <form asp-area="Register" asp-controller="Registers" asp-action="Index" method="POST" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.LabelFor(m => m.Person.Name)
+                            @Html.TextBoxFor(m => m.Person.Name, new { @class = "form-control", placeholder = "Nombre" })
+                            @Html.ValidationMessageFor(m => m.Person.Name, "", new { @class = "" })
+                        </div>
+                        <div class="form-group col-md-6">
+                            @Html.LabelFor(m => m.Person.SecondName)
+                            @Html.TextBoxFor(m => m.Person.SecondName, new { @class = "form-control", placeholder = "Segundo nombre" })
+                            @Html.ValidationMessageFor(m => m.Person.SecondName, "", new { @class = "" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.LabelFor(m => m.Person.SurName)
+                            @Html.TextBoxFor(m => m.Person.SurName, new { @class = "form-control", placeholder = "Apellido" })
+                            @Html.ValidationMessageFor(m => m.Person.SurName, "", new { @class = "" })
+                        </div>
+                        <div class="form-group col-md-6">
+                            @Html.LabelFor(m => m.Person.SecondSurName)
+                            @Html.TextBoxFor(m => m.Person.SecondSurName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Person.SecondSurName, "", new { @class = "" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.LabelFor(m => m.Person.IdIdentificationType)
+                            @Html.DropDownListFor(m => m.Person.IdIdentificationType, (IEnumerable<SelectListItem>)ViewBag.ListIdType, "Seleccione", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Person.IdIdentificationType, "", new { @class = "" })
+                        </div>
+                        <div class="form-group col-md-6">
+                            @Html.LabelFor(m => m.Person.Identification)
+                            @Html.TextBoxFor(m => m.Person.Identification, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Person.Identification, "", new { @class = "" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.LabelFor(m => m.Person.IdDepartPlace)
+                            @Html.DropDownListFor(m => m.Person.IdDepartPlace, (IEnumerable<SelectListItem>)ViewBag.ListDepartment, "Seleccione", new { @class = "form-control" })
+                        </div>
+                        <div class="form-group col-md-6">
+                            @Html.LabelFor(m => m.Person.Birthplace)
+                            @Html.DropDownListFor(m => m.Person.Birthplace, (IEnumerable<SelectListItem>)ViewBag.ListCities, "Seleccione", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Person.Birthplace, "", new { @class = "" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Person.Birthdate)
+                            @Html.TextBoxFor(m => m.Person.Birthdate, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Person.Birthdate, "", new { @class = "" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.LabelFor(m => m.Person.Phone)
+                            @Html.TextBoxFor(m => m.Person.Phone, new { @class = "form-control", placeholder = "usuario@mail.com" })
+                            @Html.ValidationMessageFor(m => m.Person.Phone, "", new { @class = "" })
+                        </div>
+                        <div class="form-group col-md-6">
+                            @Html.LabelFor(m => m.Person.Cellphone)
+                            @Html.TextBoxFor(m => m.Person.Cellphone, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Person.Cellphone, "", new { @class = "" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.LabelFor(m => m.Person.IdDepartment)
+                            @Html.DropDownListFor(m => m.Person.IdDepartment, (IEnumerable<SelectListItem>)ViewBag.ListDep, "Seleccione", new { @class = "form-control" })
+                        </div>
+                        <div class="form-group col-md-6">
+                            @Html.LabelFor(m => m.Person.IdCity)
+                            @Html.DropDownListFor(m => m.Person.IdCity, (IEnumerable<SelectListItem>)ViewBag.ListCity, "Seleccione", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Person.IdCity, "", new { @class = "" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            @Html.LabelFor(m => m.Person.Address)
+                            @Html.TextBoxFor(m => m.Person.Address, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Person.Address, "", new { @class = "" })
+                        </div>
+                    </div>
+                    <hr />
+                    <p class="text-center">Datos de usuario</p>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Email)
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "usuario@mail.com" })
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Password)
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "" })
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Crear</button>
+                </form>
+
+            </div>
+            <!-- /.login-card-body -->
+        </div>
+
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/js/Register/register.js"></script>
+ }

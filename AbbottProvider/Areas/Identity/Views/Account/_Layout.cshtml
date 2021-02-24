@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@ViewData["Title"] - AbbottProvider</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/lib/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href="~/lib/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/css/adminlte.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    </head>
+    <body class="hold-transition login-page">
+
+        @RenderBody()
+
+        <!-- MODAL -->
+    <div class="modal fade show alert-modal" id="modal-gen" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="modal-title-govco" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header pb-0">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" aria-label="Cerrar ventana" title="Cerrar ventana">x</button>
+                </div>
+                <div class="modal-body text-center modal-content-info  pt-0">
+                    <span class="govco-icon size-4x"></span>
+                    <h2 class="headline-xl-govco">Mensaje de alerta</h2>
+                    <p>Descripción alerta</p>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-light btn-modal-cancel btn-round btn-middle btn-long" data-dismiss="modal">CANCELAR</button>
+                    <button type="button" class="btn btn-primary btn-modal-ok btn-round btn-high btn-long">CONTINUAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/.MODAL-->
+    <!-- /.login-box -->
+    <!-- jQuery -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/js/adminlte.min.js"></script>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>
+        if("@ViewBag.Modal" == "True"){
+            ModalFn("@Html.Raw(ViewBag.ModalType)","@Html.Raw(ViewBag.ModalTitle)", "@Html.Raw(ViewBag.ModalMessage)", "@Html.Raw(ViewBag.ModalLabelOk)", "@Html.Raw(ViewBag.ModalLabelNo)", "@Html.Raw(ViewBag.ModalOk)", "@Html.Raw(ViewBag.ModalNo)");
+        }
+
+    </script>
+
+    </body>
+</html>

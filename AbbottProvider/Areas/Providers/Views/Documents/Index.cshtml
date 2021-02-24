@@ -1,0 +1,117 @@
+﻿@model AbbottProvider.Areas.Providers.Models.DocVM
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Index";
+}
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Lista de archivos</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Lista de archivos</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <!-- Main row -->
+        <main role="main">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Documentos</h3>
+                            <a href="/Providers/Documents/LoadDocs" class="btn btn-primary float-right">Cargar nuevo documento</a>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Documento</th>
+                                        <th>Tipo documento</th>
+                                        <th>Fecha</th>
+                                        <th style="width: 40px">Estado</th>
+                                        <th style="width: 25%">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model.ListDocs != null && Model.ListDocs.Count > 0)
+                                    {
+                                        foreach (var item in Model.ListDocs)
+                                        {
+                                            <tr>
+                                                <td>@item.Name</td>
+                                                <td>
+                                                    @item.DocumentType.Name
+                                                </td>
+                                                <td>
+                                                    @item.RegistrationDate.ToString("dd/mm/yyyy")
+                                                </td>
+                                                <td>
+                                                    @if (item.IdState == 3)
+                                                    {
+                                                        <span class="badge bg-success">Aprobado</span>
+                                                    }
+                                                    else@if (item.IdState == 4)
+                                                    {
+                                                        <span class="badge bg-danger">Rechazado</span>
+                                                    }
+                                                    else@if (item.IdState == 5)
+                                                    {
+                                                        <span class="badge bg-warning">Revisión</span>
+                                                    }
+                                                </td>
+                                                <td>
+                                                    <a class="btn btn-primary btn-sm" href="#">
+                                                        <i class="fas fa-folder">
+                                                        </i>
+                                                        View
+                                                    </a>
+                                                    <a class="btn btn-info btn-sm" href="#">
+                                                        <i class="fas fa-pencil-alt">
+                                                        </i>
+                                                        Edit
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer clearfix">
+                            <ul class="pagination pagination-sm m-0 float-right">
+                                <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /.card -->
+
+                </div>
+                <!-- /.col -->
+
+            </div>
+
+        </main>
+
+        <!-- /.row (main row) -->
+    </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->

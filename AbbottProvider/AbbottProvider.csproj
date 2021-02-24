@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>aspnet-AbbottProvider-1D7C7001-BF37-43FC-AFED-C2A720F834E9</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\pdf\tempFilesAbbot\**" />
+    <Content Remove="wwwroot\pdf\tempFilesAbbot\**" />
+    <EmbeddedResource Remove="wwwroot\pdf\tempFilesAbbot\**" />
+    <None Remove="wwwroot\pdf\tempFilesAbbot\**" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Providers\Data\" />
+    <Folder Include="Areas\Register\Data\" />
+    <Folder Include="Areas\Reviews\Data\" />
+    <Folder Include="Areas\Reviews\Models\" />
+    <Folder Include="Data\Migrations\" />
+    <Folder Include="wwwroot\pdf\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\Abbott.CrossCutting\Abbott.CrossCutting.csproj" />
+    <ProjectReference Include="..\Abbott.EmailCommunication\Abbott.EmailCommunication.csproj" />
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
+
+</Project>
