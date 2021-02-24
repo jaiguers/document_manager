@@ -1,4 +1,4 @@
-﻿using Abbott.CrossCutting.ApplicationModel;
+﻿using DocumentManager.CrossCutting.ApplicationModel;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;

@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
-namespace Abbott.CrossCutting.ApplicationModel
+namespace DocumentManager.CrossCutting.ApplicationModel
 {
     public class PersonAM
     {

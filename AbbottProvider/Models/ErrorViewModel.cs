@@ -1,6 +1,6 @@
 using System;
 
-namespace AbbottProvider.Models
+namespace DocumentManager.Models
 {
     public class ErrorViewModel
     {

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace AbbottProvider.Areas.Identity.Models.ViewModels
+namespace DocumentManager.Areas.Identity.Models.ViewModels
 {
     /// <summary>
     /// View model para autenticación de usuario

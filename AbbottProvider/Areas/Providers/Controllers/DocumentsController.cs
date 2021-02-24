@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using Abbott.CrossCutting.ApplicationModel;
-using Abbott.CrossCutting.Enumerators;
-using AbbottProvider.Areas.Identity.Models;
-using AbbottProvider.Areas.Providers.Models;
-using AbbottProvider.Controllers;
+﻿using DocumentManager.Areas.Identity.Models;
+using DocumentManager.Areas.Providers.Models;
+using DocumentManager.Controllers;
+using DocumentManager.CrossCutting.ApplicationModel;
+using DocumentManager.CrossCutting.Enumerators;
 using Domain.Business.BO;
 using Domain.Business.Interface;
 using Domain.Context;
@@ -18,8 +11,14 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text.RegularExpressions;
 
-namespace AbbottProvider.Areas.Providers.Controllers
+namespace DocumentManager.Areas.Providers.Controllers
 {
     [Area("Providers")]
     public class DocumentsController : BaseController
@@ -112,6 +111,7 @@ namespace AbbottProvider.Areas.Providers.Controllers
             }
             catch (Exception ex)
             {
+                logger.LogInformation(ex.Message);
                 CreateModal("error", "Error", "Error al cargar los documentos.", "Continuar", null, "Redirect('/Providers/Documents/Index')", null);
                 return View(model);
             }

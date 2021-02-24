@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Abbott.CrossCutting\Abbott.CrossCutting.csproj" />
+    <ProjectReference Include="..\Abbott.CrossCutting\DocumentManager.CrossCutting.csproj" />
   </ItemGroup>
 
 </Project>

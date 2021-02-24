@@ -8,18 +8,18 @@ using Domain.Context;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using Abbott.CrossCutting.ApplicationModel;
-using AbbottProvider.Areas.Providers.Models;
+using DocumentManager.CrossCutting.ApplicationModel;
+using DocumentManager.Areas.Providers.Models;
 using Microsoft.AspNetCore.Authorization;
-using Abbott.CrossCutting.Enumerators;
-using AbbottProvider.Models;
+using DocumentManager.CrossCutting.Enumerators;
+using DocumentManager.Models;
 using System.Security.Cryptography;
 using System.IO;
-using AbbottProvider.Controllers;
+using DocumentManager.Controllers;
 using Microsoft.AspNetCore.Identity;
-using AbbottProvider.Areas.Identity.Models;
+using DocumentManager.Areas.Identity.Models;
 
-namespace AbbottProvider.Areas.Reviews.Controllers
+namespace DocumentManager.Areas.Reviews.Controllers
 {
     [Area("Reviews")]
     public class ReviewsController : BaseController

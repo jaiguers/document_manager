@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Abbott.CrossCutting.Enumerators
+namespace DocumentManager.CrossCutting.Enumerators
 {
     /// <summary>
     /// Roles del sistema

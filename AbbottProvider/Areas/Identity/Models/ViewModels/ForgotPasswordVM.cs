@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AbbottProvider.Areas.Identity.Models.ViewModels
+namespace DocumentManager.Areas.Identity.Models.ViewModels
 {
     public class ForgotPasswordVM
     {

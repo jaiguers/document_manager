@@ -1,21 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using DocumentManager.Areas.Identity.Models;
+using DocumentManager.Models;
+using Domain.Context;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Microsoft.AspNetCore.Http;
-using AbbottProvider.Models;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Authorization;
-using AbbottProvider.Areas.Identity.Models;
-using Microsoft.EntityFrameworkCore;
-using Domain.Business.Interface;
-using Domain.Context;
-using Domain.Business.BO;
+using System.Diagnostics;
 
-namespace AbbottProvider.Controllers
+namespace DocumentManager.Controllers
 {
     public class HomeController : BaseController
     {

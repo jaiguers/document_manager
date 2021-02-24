@@ -41,8 +41,7 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\Abbott.CrossCutting\Abbott.CrossCutting.csproj" />
-    <ProjectReference Include="..\Abbott.EmailCommunication\Abbott.EmailCommunication.csproj" />
+    <ProjectReference Include="..\Abbott.CrossCutting\DocumentManager.CrossCutting.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 

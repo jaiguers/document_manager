@@ -1,4 +1,4 @@
-﻿using Abbott.CrossCutting.ApplicationModel;
+﻿using DocumentManager.CrossCutting.ApplicationModel;
 using AutoMapper;
 using Domain.Models;
 

@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Abbott.CrossCutting.EmailModel;
-using Abbott.EmailCommunication;
-using Abbott.EmailCommunication.Interface;
-using AbbottProvider.Areas.Identity.Models;
-using AbbottProvider.Areas.Identity.Models.ViewModels;
+using DocumentManager.Areas.Identity.Models;
+using DocumentManager.Areas.Identity.Models.ViewModels;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
@@ -15,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace AbbottProvider.Areas.Identity.Controllers
+namespace DocumentManager.Areas.Identity.Controllers
 {
     [Area("Identity")]
     public class AccountController : Controller
@@ -24,7 +21,6 @@ namespace AbbottProvider.Areas.Identity.Controllers
         private readonly ILogger<AccountController> logger;
         private readonly UserManager<Users> userManager;
         private readonly RoleManager<Role> roleManager;
-        private readonly ICommunication EmailComm;
 
         public IConfiguration Configuration { get; }
 
@@ -35,7 +31,6 @@ namespace AbbottProvider.Areas.Identity.Controllers
             userManager = userManag;
             singInManager = signInManag;
             Configuration = configuration;
-            EmailComm = new EmailsCommunication(Configuration);
         }
 
         [HttpGet]
@@ -153,26 +148,9 @@ namespace AbbottProvider.Areas.Identity.Controllers
                     string resetToken = await userManager.GeneratePasswordResetTokenAsync(user);
                     string tokenEncode = System.Web.HttpUtility.UrlEncode(resetToken);
 
-                    ConfirmationEmail confirmEmail = new ConfirmationEmail { Email = user.Email };
-                    confirmEmail.CallBack = Url.Action("RecoverPassword", "Account", new
-                    {
-                        area = "Identity",
-                        token = tokenEncode,   // reset token
-                        u = user.Id            // user token, use GUID user id or Usuario.PublicToken
-                    }, protocol: Request.Scheme);
+                    CreateModal("exito", "Terminado", "Se ha enviado correo electrónico para completar el proceso.", "Continuar", null, "Redirect('/')", null);
+                    return View(model);
 
-                    Boolean emailSent = EmailComm.SendEmailRecoverPassword(confirmEmail);
-
-                    if (emailSent)
-                    {
-                        CreateModal("exito", "Terminado", "Se ha enviado correo electrónico para completar el proceso.", "Continuar", null, "Redirect('/')", null);
-                        return View(model);
-                    }
-                    else
-                    {
-                        CreateModal("error", "Error", "No se ha podido enviar el email, intente de nuevo mas tarde.", "Continuar", null, "Redirect('/')", null);
-                        return View(model);
-                    }
                 }
                 else
                 {

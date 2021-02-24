@@ -1,12 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace AbbottProvider.Areas.Identity.Models.Context
+namespace DocumentManager.Areas.Identity.Models.Context
 {
     public class AuthDbContext : IdentityDbContext<Users, Role, string, IdentityUserClaim<string>, UsersRoles, IdentityUserLogin<string>, IdentityRoleClaim<string>, IdentityUserToken<string>>
     {

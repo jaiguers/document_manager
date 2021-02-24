@@ -3,15 +3,12 @@ using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace AbbottProvider.Areas.Identity.Models
+namespace DocumentManager.Areas.Identity.Models
 {
     /// <summary>
     /// Entidad usuario extendida por criterios de negocio
     /// Autor: Jair Guerrero
-    /// Fecha: 2020-11-17
     /// </summary>
     public class Users : IdentityUser
     {

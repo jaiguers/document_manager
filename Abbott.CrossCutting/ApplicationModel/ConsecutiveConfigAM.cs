@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Abbott.CrossCutting.ApplicationModel
+namespace DocumentManager.CrossCutting.ApplicationModel
 {
     public class ConsecutiveConfigAM
     {

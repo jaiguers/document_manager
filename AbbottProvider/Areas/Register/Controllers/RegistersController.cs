@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Abbott.CrossCutting.ApplicationModel;
-using AbbottProvider.Areas.Identity.Models;
-using AbbottProvider.Areas.Register.Models;
+using DocumentManager.CrossCutting.ApplicationModel;
+using DocumentManager.Areas.Identity.Models;
+using DocumentManager.Areas.Register.Models;
 using Domain.Business.BO;
 using Domain.Business.Interface;
 using Domain.Context;
@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 
-namespace AbbottProvider.Areas.Register.Controllers
+namespace DocumentManager.Areas.Register.Controllers
 {
     [Area("Register")]
     public class RegistersController : Controller

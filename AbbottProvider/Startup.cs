@@ -10,12 +10,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Http;
-using AbbottProvider.Areas.Identity.Models.Context;
-using AbbottProvider.Areas.Identity.Models;
+using DocumentManager.Areas.Identity.Models.Context;
+using DocumentManager.Areas.Identity.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Domain.Context;
 
-namespace AbbottProvider
+namespace DocumentManager
 {
     public class Startup
     {

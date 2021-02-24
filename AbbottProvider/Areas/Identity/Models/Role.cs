@@ -2,10 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace AbbottProvider.Areas.Identity.Models
+namespace DocumentManager.Areas.Identity.Models
 {
     public class Role : IdentityRole
     {

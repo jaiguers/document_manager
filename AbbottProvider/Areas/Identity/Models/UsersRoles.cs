@@ -1,10 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace AbbottProvider.Areas.Identity.Models
+namespace DocumentManager.Areas.Identity.Models
 {
     /// <summary>
     /// Entidad IdentityUserRole extendida por criterios de negocio

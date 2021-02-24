@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AbbottProvider.Models;
+﻿using DocumentManager.Models;
 using Domain.Business.BO;
 using Domain.Business.Interface;
 using Domain.Context;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
 
-namespace AbbottProvider.Controllers
+namespace DocumentManager.Controllers
 {
     public class UtilsController : Controller
     {

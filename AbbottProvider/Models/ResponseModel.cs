@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AbbottProvider.Models
+namespace DocumentManager.Models
 {
     public class ResponseModel
     {

@@ -1,11 +1,7 @@
-﻿using Abbott.CrossCutting.ApplicationModel;
-using System;
-using System.Collections.Generic;
+﻿using DocumentManager.CrossCutting.ApplicationModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace AbbottProvider.Areas.Register.Models
+namespace DocumentManager.Areas.Register.Models
 {
     public class RegisterVM
     {
