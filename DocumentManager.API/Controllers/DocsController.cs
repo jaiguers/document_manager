@@ -46,7 +46,7 @@ namespace DocumentManager.API.Controllers
                     consecutive = configBO.GetFirst(j => j.Prefix == "CE");
 
                 string number = (++consecutive.Consecutive).ToString();
-                number = number.PadLeft((10 - number.Length), '0');
+                number = number.PadLeft((8 - number.Length), '0');
 
                 data.Consecutive = consecutive.Prefix + number;
 

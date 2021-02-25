@@ -119,15 +119,8 @@ namespace DocumentManager.Areas.Providers.Controllers
                     if (response.IsSuccessStatusCode)
                         CreateModal("exito", "Terminado", "Se ha registrado el documento satisfactoriamente.", "Terminar", null, "Redirect('Index')", null);
 
-                    var res = apiClient.GetAsync(apiEndpoint + "/api/Docs/GetDocType/").Result;
-                    if (res.IsSuccessStatusCode)
-                    {
-                        var strJson = await res.Content.ReadAsStringAsync();
-                        var deserialize = JsonConvert.DeserializeObject<List<DocumentTypeAM>>(strJson);
-                        ViewBag.ListDocType = new SelectList(deserialize, "Id", "Name");
-                    }
 
-                    return View(model);
+                    return RedirectToAction("Index");
                 }
             }
             catch (Exception ex)
