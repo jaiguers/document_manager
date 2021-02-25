@@ -40,8 +40,8 @@ namespace Domain.Models
         [Column("Rejection_Observation", TypeName = "varchar(150)")]
         public string RejectionObservation { get; set; }
 
-        [Column("Consecutive", TypeName = "bigint")]
-        public long Consecutive { get; set; }
+        [Column("Consecutive", TypeName = "varchar(10)")]
+        public string Consecutive { get; set; }
 
         [Column("Id_State", TypeName = "bigint")]
         public long IdState { get; set; }

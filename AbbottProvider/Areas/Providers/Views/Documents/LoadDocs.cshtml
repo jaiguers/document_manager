@@ -47,10 +47,8 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-
-                                </div>
-                                <div class="form-group">
-
+                                    @Html.LabelFor(m => m.IdDocumentType)
+                                    @Html.DropDownListFor(m => m.IdDocumentType, (IEnumerable<SelectListItem>)ViewBag.ListDocType, null, new { @class = "form-control" })
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary">Cargar</button>

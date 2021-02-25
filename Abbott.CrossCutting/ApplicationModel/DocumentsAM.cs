@@ -15,7 +15,7 @@ namespace DocumentManager.CrossCutting.ApplicationModel
         public string RejectionObservation { get; set; }
         public DateTime RegistrationDate { get; set; }
         public long IdState { get; set; }
-        public long Consecutive { get; set; }
+        public string Consecutive { get; set; }
         public DocumentTypeAM DocumentType { get; set; }
     }
 }

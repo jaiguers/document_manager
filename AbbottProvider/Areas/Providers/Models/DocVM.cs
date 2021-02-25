@@ -1,10 +1,7 @@
 ﻿using DocumentManager.CrossCutting.ApplicationModel;
 using Microsoft.AspNetCore.Http;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace DocumentManager.Areas.Providers.Models
 {
@@ -14,6 +11,11 @@ namespace DocumentManager.Areas.Providers.Models
         [Required(ErrorMessage = "Campo requerido.")]
         [Display(Name = "Documento *")]
         public IFormFile UploadedFile { get; set; }
+
+        [Required(ErrorMessage = "Campo requerido.")]
+        [Display(Name = "Tipo de Documento *")]
+        public long IdDocumentType { get; set; }
+
         public List<DocumentsAM> ListDocs { get; set; }
     }
 }
